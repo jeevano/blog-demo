@@ -29,8 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 ###############
 # MY ADDED GEMS
-# Make errors more understadable
-gem 'better_errors', '~> 2.5.1'
+
 # CSS framework
 gem 'bulma-rails', '~> 0.7.5'
 ###############
@@ -61,7 +60,10 @@ group :development do
 
   ######guard######
   gem 'guard', '~> 2.15'
-  gem 'guard-livereload', '~> 2.5.2'
+  gem 'guard-livereload', '~> 2.5.2', require: false
+
+  # Make errors more understadable
+  gem 'better_errors', '~> 2.5.1'
 end
 
 group :test do

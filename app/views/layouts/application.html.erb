@@ -10,6 +10,66 @@
   </head>
 
   <body>
+    <!--<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+
+    <!-- BULMA NAVBAR -->
+
+    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+              <strong>Jeevan's Blog Demo |</strong>
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              <%= link_to "Home", root_path, class:"navbar-item"%>
+
+              <% if current_user && current_user.admin %>
+              <%= link_to "Create a New Post", new_post_path, class:"navbar-item"%>
+              <% end %>
+            </a>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+
+
+              <% if current_user %>
+                <% if current_user.admin %>
+                  Jeevan (ADMIN)
+                <% else %>
+                  <%= current_user.email %>
+                <% end %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"button is-white" %>
+
+              <% else %>
+                <%= link_to 'Sign up', new_user_registration_path, class:"button is-link" %>
+                <%= link_to "Log in", new_user_session_path, class:"button is-white"%>
+
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- BULMA END NAVBAR -->
+
+
+
+
     <%= yield %>
   </body>
 </html>

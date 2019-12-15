@@ -1,0 +1,30 @@
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+
+<!-- only displays form if there is a user signed in currently -->
+<% if current_user %>
+
+<%  %>
+<!-- input with value of users email, cannot be edited -->
+<div class="field">
+  <div class="control">
+    <%= f.input :name, placeholder: current_user.email, input_html: { class: 'label', value: current_user.email }, wrapper: false, label_html: { class: 'label' }, :readonly => true  %>
+  </div>
+</div>
+
+<!-- input for content of the comment -->
+<div class="field">
+  <div class="control">
+    <%= f.input :comment, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }  %>
+  </div>
+</div>
+<%= f.button :submit, class: "button is-black" %>
+
+<% else %>
+
+<div class="field">
+  <p>You must be logged in to post a comment</p>
+</div>
+
+<% end %>
+
+<% end %>

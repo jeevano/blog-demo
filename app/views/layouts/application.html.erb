@@ -19,7 +19,7 @@
       <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item">
-              <strong>Jeevan's Blog Demo |</strong>
+              <strong>|JBD|   Jeevan's Blog Demo</strong>
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -46,14 +46,16 @@
 
               <% if current_user %>
                 <% if current_user.admin %>
-                  Jeevan (ADMIN)
+                  <%= current_user.email %> (ADMIN)
                 <% else %>
                   <%= current_user.email %>
                 <% end %>
+                <h1> &nbsp &nbsp </h1>
                 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"button is-white" %>
 
               <% else %>
                 <%= link_to 'Sign up', new_user_registration_path, class:"button is-link" %>
+                <h1> &nbsp &nbsp &nbsp </h1>
                 <%= link_to "Log in", new_user_session_path, class:"button is-white"%>
 
               <% end %>

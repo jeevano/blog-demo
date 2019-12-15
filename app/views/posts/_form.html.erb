@@ -1,16 +1,16 @@
 <div class="container">
 <%= simple_form_for @post do |f| %>
 
-  <!-- form for the title of the post -->
+  <!-- title of the post -->
 
   <div class="field">
     <div class="control">
-      <%= f.input :title, input_html: { class: 'input' }, wrapper: false, required: true, label_html: { class: 'label' } %>
+      <%= f.input :title, input_html: { class: 'input' }, wrapper: false, error: 'You must enter a title', label_html: { class: 'label' } %>
     </div>
   </div>
 
 
-  <!-- form for the content of the post -->
+  <!-- content of the post -->
   <div class="field">
     <div class="control">
       <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }  %>

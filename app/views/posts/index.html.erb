@@ -1,24 +1,24 @@
 <div class="container">
   <br>
   <h1 class="title" style="font-family: Helvetica-Neue, Arial, Sans-Serif; color:Black; font-size: 64px;">
-      <strong>Blog Index</strong>
+      <strong>Jeevan's Blog Demo</strong>
   </h1>
   <hr>
-  <br>
+
 </div>
 <div class="columns">
   <div class="column is-white">
 
   </div>
   <div class="column is-white">
-    <section class-"section">
+    <section class="section">
       <div class="container">
         <% @posts.each do |post| %>
         <h1 class="title"> <%= link_to post.title, post %> </h1>
-        <p> <%= post.content %> </p>
-        <br>
+        <p> <%= post.content[0...200] + '...' %> </p>
+
         <hr>
-        <br>
+
         <% end %>
       </div>
     </section>

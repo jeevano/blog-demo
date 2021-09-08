@@ -65,7 +65,7 @@ group :development do
   gem 'guard-livereload', '~> 2.5.2', require: false
 
   # Make errors more understadable
-  gem 'better_errors', '~> 2.5.1'
+  gem 'better_errors', '~> 2.8.0'
 end
 
 group :test do
